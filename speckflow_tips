@@ -1,0 +1,21 @@
+Specflow tips
+
+=================================================================
+1. To use only predefined set of possible valuses of variable(s) within the step: wrap the step with "^...$" as regexp and list values within round brackets dividing with "|"
+
+Example:
+[StepDefinition(@"^I fill First Name field with (Jack|Jim|Johnnie) value$")]
+public async Task IFillFirstNameFieldWithValueAsync(string firstName)
+{
+    await page.SetFieldValue(firstName);
+}
+
+=================================================================
+2. To use only step text options, not using it as variables: list options within round brackets dividing with "|" and add "?:" at the beginning
+
+Example:
+[StepDefinition(@"I turn (?:on|off) Dark Mode switcher(?:|s) on Login page")]
+public async Task WhenITurnOffSubsectionOverallForL3OnEditEngagementPage()
+{
+    await page.TurnSwitcherOnOff();
+}
