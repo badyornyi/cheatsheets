@@ -1,0 +1,12 @@
+CSS And XPATH Locators Tips
+
+CSS
+
+AND/OR/NOT
+
+To use NOT in CSS locator:
+add ":not(_attribute_to_exclude_)"
+Example:
+div:not([class*='row-last'])
+div.row:not([class*='row-last'])
+div[title='Row']:not([class*='row-last'])
